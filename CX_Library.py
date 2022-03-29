@@ -14,8 +14,8 @@ class Library:
         self.tomorrow = (date.today() + timedelta(days=1)).strftime("%Y-%m-%d")
         self.acc = phone
         self.pwd = password
-        self.deptIdEnc = "214d62ddb0e920e7"
-        self.deptId = "27734"
+        self.deptIdEnc = ""
+        self.deptId = ""
         self.status = {
             '0': '待履约',
             '1': '学习中',
@@ -281,13 +281,4 @@ class Library:
 
 
 if __name__ == '__main__':
-    lib = Library("15530304464", "991229abc")
-    # 默认预约第二天 9:30 - 22:00
-    # lib.submit(395, lib.tomorrow)
-
-    print(lib.sign())
-
-    # lib.get_all_room_and_seat()
-    # lib.get_study_info()
-    # for i in lib.emptyInfo:
-    #     print(i)
+    lib = Library("", "")
