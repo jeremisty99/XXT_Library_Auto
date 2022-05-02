@@ -1,0 +1,697 @@
+{
+    "llsid": 2005132693113213089,
+    "result": 1,
+    "errorMsg": "OK",
+    "impAdInfo": [
+        {
+            "type": 1,
+            "pageId": 11101,
+            "subPageId": 11101001,
+            "gridPos": 0,
+            "gridUnitId": "1",
+            "adInfo": [
+                {
+                    "adTrackInfo": [
+                        {
+                            "type": 1,
+                            "url": [
+                                "https://unet.ucweb.com/v3/ad/kuaishou?type=click&androidTargetPkg=com.ucmobile.lite&iosTargetPkg=com.ucweb.iphone.pro&oaid=__OAID__&imeiSum=__IMEI2__&idfaSum=__IDFA2__&time=__TS__&callbackUrl=http%3A%2F%2Fad.partner.gifshow.com%2Ftrack%2Factivate%3Fcallback%3Dkk6Tt4AWMjRjgX0Ls6x4PXVo1om-0PdTRWV3lOQ8EbV0T6zQ4NAQlqfnf1Hc69j_93AmzSCHd8RA8uwxOSNezKy-7p5y5ANtJ_vNOd2DwASiapcTm6ahOiyRUcEpJIRn-R0O4Bb5lqYMoB8g078jnGabW7jHFLvROScNR9MLXb3ujbB1H46eBGTyz7eyYKOH&ip=219.150.53.66&ua=__UA__&acid=13417107&aid=1467668192&cid=22851271887&did=803273041&csite=24&os=__OS__&oaidSum=__OAID2__&ch=uclite%40uc_and_ks_wz_cy5"
+                            ]
+                        }
+                    ],
+                    "adConversionInfo": {
+                        "h5Url": "https://activity.e.kuaishou.com/ksDownloadPage/?callback=kk6Tt4AWMjRjgX0Ls6x4PXVo1om-0PdTRWV3lOQ8EbV0T6zQ4NAQlqfnf1Hc69j_93AmzSCHd8RA8uwxOSNezKy-7p5y5ANtJ_vNOd2DwASiapcTm6ahOiyRUcEpJIRn-R0O4Bb5lqYMoB8g078jnGabW7jHFLvROScNR9MLXb3ujbB1H46eBGTyz7eyYKOH",
+                        "deeplinkUrl": "",
+                        "appDownloadUrl": "https://download.uc.cn/download/uclite?ch=uclite@uc_and_ks_wz_cy5",
+                        "marketUrl": "market://details?id=com.ucmobile.lite",
+                        "h5Type": 0,
+                        "email": "",
+                        "cellphone": "",
+                        "midPageUrl": "",
+                        "liveStreamId": "PojYA1tAoJg"
+                    },
+                    "adBaseInfo": {
+                        "creativeId": 22851271887,
+                        "accountId": 13417107,
+                        "adSourceType": 1,
+                        "adDescription": "兄弟让我来这里赚零花钱，还真领到了红包，提现又快又简单",
+                        "adSourceDescription": "广告",
+                        "adOperationType": 1,
+                        "adShowDuration": 28,
+                        "appIconUrl": "https://static.yximgs.com/udata/pkg/05f2b99c2adc485eacd8168090abaccd.jpg",
+                        "appName": "UC浏览器极速版.apk",
+                        "appPackageName": "com.ucmobile.lite",
+                        "appScore": 0,
+                        "adActionDescription": "立即下载",
+                        "adMarkContent": "广告",
+                        "campaignId": 803273041,
+                        "unitId": 1467668192,
+                        "adPos": 0,
+                        "adxSourceType": 0,
+                        "chargeInfo": "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",
+                        "campaignName": "20220430-2987441-录屏-网赚-网赚A-激励应用下载-uclite@uc_and_ks_wz_cy5-11:40",
+                        "deliveryStartTs": 0,
+                        "deliveryEndTs": 0,
+                        "adShowEnable": 0,
+                        "productName": "UC浏览器极速版",
+                        "enableCloseAd": true,
+                        "adActionBarColor": "e55700",
+                        "inspireAdInfo": {
+                            "inspireAdBillTime": 20000
+                        },
+                        "autoDownloadForWifi": false,
+                        "usePriorityCard": false,
+                        "serverExpTag": ""
+                    },
+                    "adMaterialInfo": {
+                        "materialType": 1,
+                        "materialFeature": [
+                            {
+                                "materialUrl": "https://alimov2.a.kwimgs.com/upic/2022/04/27/13/BMjAyMjA0MjcxMzU0NDRfMjgzOTIxNzg0NF83MzAyNTM0NTkwM18wXzM=_b_B29fbfa73e6831a2d23b7e7f7d51d5f32.mp4?tag=1-1651475119-unknown-0-iqcma4czak-9ee94425bc829b83&clientCacheKey=3xp45spxtmpufa2_b.mp4&tt=b&di=70271aa3&bp=13291",
+                                "coverUrl": "http://tx2.a.yximgs.com/udata/pkg/smart_1611ff4587b04608abe7ed6d0dee6d55.kpg",
+                                "materialSize": {
+                                    "width": 0,
+                                    "height": 0
+                                },
+                                "featureType": 1,
+                                "photoId": 5201657643371438383,
+                                "photoSize": {
+                                    "width": 720,
+                                    "height": 1280
+                                }
+                            }
+                        ]
+                    },
+                    "advertiserInfo": {
+                        "userId": 2839217844,
+                        "userName": "UC极速版",
+                        "accountId": 13417107,
+                        "userGender": "U",
+                        "portraitUrl": "https://p1.a.yximgs.com/uhead/AB/2022/04/12/10/BMjAyMjA0MTIxMDMyMjhfMjgzOTIxNzg0NF8zX2hkNzYyXzgzNQ==_s.jpg"
+                    },
+                    "reservationId": "",
+                    "liveStartTime": 0
+                }
+            ]
+        }
+    ],
+    "feeds": [
+        {
+            "streamManifest": {
+                "version": "1.0.0",
+                "businessType": 2,
+                "mediaType": 2,
+                "videoId": "f7aff6d193ce1054",
+                "hideAuto": false,
+                "manualDefaultSelect": false,
+                "stereoType": 0,
+                "adaptationSet": [
+                    {
+                        "id": 1,
+                        "duration": 27708,
+                        "representation": [
+                            {
+                                "id": 1,
+                                "url": "http://v4.kwaicdn.com/ksc1/GbclHruXioPXcskcJAfjtqfJAjg4dvkrSe4fT7HO9VR1jTS2Ke0MQy8670vOL4AW8gGhv-WWojxx8IkxmwWQIhJOCCgAraBG7MaKCqTtqfeKFXkzd8klIHyME_7czu4PzJYJpYOPk9yNBa1OnL8p03qCTE7gyAp23zPBFyfIapceOTBcatPhFY_uMKO3r3ZD.mp4?pkey=AAV_LYLkuJ9eKBwebYBYuVY5WwqrGhdmoqObk6U_KM5omAzvY8bGuItqBZASfJ35GDRvZmMT8dZUBvzufq_75VOonHRtlfVzUsrMk-FZoh6Gsi-OqijcI1ntgWVsGbkZoBY&tag=1-1651475833-unknown-0-gtofggsys9-80d8e35ab7e9838d&clientCacheKey=3xp45spxtmpufa2_swft.mp4&di=db963542&bp=10001&tt=swft&ss=vp",
+                                "backupUrl": [
+                                    "http://v1.kwaicdn.com/ksc1/GbclHruXioPXcskcJAfjtqfJAjg4dvkrSe4fT7HO9VR1jTS2Ke0MQy8670vOL4AW8gGhv-WWojxx8IkxmwWQIhJOCCgAraBG7MaKCqTtqfeKFXkzd8klIHyME_7czu4PzJYJpYOPk9yNBa1OnL8p03qCTE7gyAp23zPBFyfIapceOTBcatPhFY_uMKO3r3ZD.mp4?pkey=AAUiWa5uW1GnDJmZ5uGgbylzHWZvLGTdV6W21cZDcI1Zl9tVzBnA0-YuaSQP23y1JY4OtOmhOatDrS640FdAwJx9MHiLhJ8Ouw0J1tPWs91hAvF6gR3_wwx9V_Sm1llpA50&tag=1-1651475833-unknown-1-ngnbompywy-22b7a5e69feaa546&clientCacheKey=3xp45spxtmpufa2_swft.mp4&di=db963542&bp=10001&tt=swft&ss=vp"
+                                ],
+                                "maxBitrate": 2300,
+                                "avgBitrate": 740,
+                                "width": 720,
+                                "height": 1280,
+                                "frameRate": 24.0,
+                                "quality": 1.6,
+                                "kvqScore": {
+                                    "FR": 3.505706836852024,
+                                    "NR": 3.443359375
+                                },
+                                "qualityType": "720p",
+                                "qualityLabel": "高清",
+                                "featureP2sp": false,
+                                "hidden": false,
+                                "disableAdaptive": false,
+                                "defaultSelect": false,
+                                "comment": "f7aff6d193ce1054/swft",
+                                "hdrType": 0,
+                                "fileSize": 2565910,
+                                "bitratePattern": [
+                                    1140,
+                                    727,
+                                    1314,
+                                    170,
+                                    320
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "playInfo": {},
+                "videoFeature": {
+                    "blurProbability": 0.2818359434604645,
+                    "blockyProbability": 0.4648977518081665,
+                    "avgEntropy": 13.750654339790344,
+                    "mosScore": 0.6728515625
+                }
+            },
+            "comments": [],
+            "recoTags": [],
+            "adminTags": [],
+            "tags": [],
+            "displayTime": null,
+            "location": {},
+            "time": "2022-05-02 15:17:13",
+            "timestamp": 1651475833549,
+            "isShareCountExp": false,
+            "caption": "兄弟让我来这里赚零花钱，还真领到了红包，提现又快又简单",
+            "photo_id": 5201657643371438383,
+            "view_count": 232235,
+            "photo_status": 0,
+            "like_count": 0,
+            "forward_count": 0,
+            "share_count": 0,
+            "unlike_count": 0,
+            "hated": 0,
+            "liked": 0,
+            "frameStyle": 0,
+            "plcFeatureEntryAbFlag": 0,
+            "noNeedToRequestPLCApi": true,
+            "plcResponseTime": 0,
+            "plcHighPriorityThanBottomEntry": false,
+            "shareGuide": {
+                "playTimes": 1,
+                "minPlayDurationInSeconds": 15,
+                "textDisplayDurationInSeconds": 4,
+                "photoShareGuide": false
+            },
+            "us_d": 1,
+            "forward_stats_params": {
+                "fid": "2821587830",
+                "et": "1_u/2005132693113213089_hd0"
+            },
+            "share_info": "userId=3xd34mxqdtwj522&photoId=3xp45spxtmpufa2",
+            "verified": false,
+            "following": 0,
+            "user_sex": "U",
+            "headurls": [
+                {
+                    "cdn": "p4.a.yximgs.com",
+                    "url": "http://p4.a.yximgs.com/uhead/AB/2022/04/12/10/BMjAyMjA0MTIxMDMyMjhfMjgzOTIxNzg0NF8zX2hkNzYyXzgzNQ==_s.jpg"
+                },
+                {
+                    "cdn": "p2.a.yximgs.com",
+                    "url": "http://p2.a.yximgs.com/uhead/AB/2022/04/12/10/BMjAyMjA0MTIxMDMyMjhfMjgzOTIxNzg0NF8zX2hkNzYyXzgzNQ==_s.jpg"
+                }
+            ],
+            "user_name": "UC极速版",
+            "photoTextLocationInfo": {
+                "leftRatio": 0.05555,
+                "topRatio": 0.03593,
+                "widthRatio": 0.91944,
+                "heightRatio": 0.93203
+            },
+            "ad": {
+                "creativeId": 22851271887,
+                "chargeInfo": "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",
+                "sourceType": 1,
+                "conversionType": 1,
+                "displayType": 2,
+                "title": "立即下载",
+                "url": "https://download.uc.cn/download/uclite?ch=uclite@uc_and_ks_wz_cy5",
+                "sourceDescription": "广告",
+                "subscriptDescription": "广告",
+                "adType": 1,
+                "tracks": [
+                    {
+                        "type": 1,
+                        "url": "https://unet.ucweb.com/v3/ad/kuaishou?type=click&androidTargetPkg=com.ucmobile.lite&iosTargetPkg=com.ucweb.iphone.pro&oaid=__OAID__&imeiSum=__IMEI2__&idfaSum=__IDFA2__&time=__TS__&callbackUrl=http%3A%2F%2Fad.partner.gifshow.com%2Ftrack%2Factivate%3Fcallback%3Dkk6Tt4AWMjRjgX0Ls6x4PXVo1om-0PdTRWV3lOQ8EbV0T6zQ4NAQlqfnf1Hc69j_93AmzSCHd8RA8uwxOSNezKPaTlW0XWXgxmHeD2GPZoxz8kwZbNuiKieTB8Jyj6ihKSoURGUxuWTBE36QYUdTJC-nur6BtZvyhdmADQA6iBdjSfmFs92lI1Hcq6IvuA6h&ip=219.150.53.66&ua=__UA__&acid=13417107&aid=1467668192&cid=22851271887&did=803273041&csite=24&os=__OS__&oaidSum=__OAID2__&ch=uclite%40uc_and_ks_wz_cy5",
+                        "urlOperationType": 1
+                    }
+                ],
+                "adCover": {
+                    "coverUrls": [
+                        {
+                            "url": "http://tx2.a.yximgs.com/udata/pkg/smart_1611ff4587b04608abe7ed6d0dee6d55.kpg"
+                        },
+                        {
+                            "url": "http://ali2.a.yximgs.com/udata/pkg/smart_1611ff4587b04608abe7ed6d0dee6d55.kpg"
+                        }
+                    ],
+                    "width": 360,
+                    "height": 640
+                },
+                "packageName": "com.ucmobile.lite",
+                "appName": "UC浏览器极速版.apk",
+                "showEndOption": true,
+                "orderId": 0,
+                "preloadLandingPage": false,
+                "commentOn": true,
+                "actionBarRatio": 1.0,
+                "extData": "{\"templateInfos\":[\"2_11_114_0\",\"3_11_137_0\",\"8_1_103_0\"]}",
+                "alertNetMobile": false,
+                "useH5": false,
+                "appIconUrl": "https://static.yximgs.com/udata/pkg/05f2b99c2adc485eacd8168090abaccd.jpg",
+                "h5App": false,
+                "fansTopFeedFlameType": 4,
+                "enableShowFansTopFlame": false,
+                "fansTopDetailPageFlameType": 3,
+                "fansTopDetailPageFlameDesc": "",
+                "actionBarLoadTime": 3000,
+                "itemHideLabel": false,
+                "labelStyle": 0,
+                "newStyle": true,
+                "actionBarStyle": 1,
+                "score": 0.0,
+                "actionBarColor": "e55700",
+                "manuUrls": [],
+                "usePriorityCard": false,
+                "coverId": 4575511853,
+                "templateType": 1,
+                "pageId": 11101,
+                "subPageId": 11101001,
+                "landingPageStyle": 0,
+                "clientStyleInfo": {
+                    "landingPageActionbarInfo": {
+                        "actionBarDisplayInfo": "推荐",
+                        "actionBarShowTime": 3000,
+                        "popLandingPageHeightPct": 30
+                    },
+                    "adMaterialFeatures": null
+                },
+                "weakStyle": false,
+                "adData": {
+                    "cover": null,
+                    "useTrackType": 0
+                },
+                "adDataV2": {
+                    "abTestForAdForms": "{\"enable_appinstall_webcard_info\": false,\"enable_nebula_slide_landingpage\": true}",
+                    "actionBarInfo": {
+                        "actionBarColor": "e55700",
+                        "actionBarLoadTime": 4000,
+                        "actionBarLocation": 0,
+                        "actionBarStyle": 1,
+                        "displayInfo": "立即下载",
+                        "downloadedActionBarLoadTime": 3000,
+                        "realShowDelayTime": 6000,
+                        "templateId": "adtk-action-bar-ad-v11",
+                        "withoutFloatingToComment": true
+                    },
+                    "adAfterCaption": 1,
+                    "adCardTemplateInfo": {
+                        "animationStyle": 2,
+                        "templateId": "adtk-card-ad-v3",
+                        "useTemplate": true
+                    },
+                    "adCoverPageButtonControl": 6,
+                    "adPageButtonControl": 6,
+                    "antiVendorVari": 0,
+                    "apkMd5Info": {
+                        "apkMd5s": [
+                            "f7202f2e05f60db9119ca78f148fce4e",
+                            "10914431",
+                            "10914431exceptionMd5",
+                            "6e113421a9dd512b0d276835d40b5117",
+                            "af0d402d5799d4b838d5a3f9508382c4"
+                        ],
+                        "unexpectedMd5Strategy": 0
+                    },
+                    "captionAdvertisementInfo": {
+                        "productIconUrl": "https://static.yximgs.com/udata/pkg/05f2b99c2adc485eacd8168090abaccd.jpg",
+                        "productName": "UC浏览器极速版"
+                    },
+                    "commentActionBarInfo": {
+                        "actionBarColor": "e55700",
+                        "actionBarLocation": 2,
+                        "actionBarStyle": 2,
+                        "commentActionBarTitle": "立即下载",
+                        "displayInfo": "立即下载",
+                        "templateId": "adtk-comment-actionbar"
+                    },
+                    "convertInfo": {
+                        "convertId": 0,
+                        "convertType": 0
+                    },
+                    "deepRewardedInfo": {
+                        "deepRewardedType": "CONVERSION_TYPE"
+                    },
+                    "deviceInfo": [
+                        "xiaomi(mi 8),小米12（8gb/256gb/5g版）,"
+                    ],
+                    "enableAppDownloadPause": true,
+                    "enableSka": false,
+                    "exitDialogInfo": {
+                        "enableShowChangeVideoButton": false
+                    },
+                    "extraDisplayInfo": {},
+                    "h5ControlInfo": {
+                        "hideH5ReportEntrance": true,
+                        "isDownloadLandingPageMould": true
+                    },
+                    "h5Data": "{\"coverUrlFrontend\":\"http://static.yximgs.com/udata/pkg/smart_1611ff4587b04608abe7ed6d0dee6d55.jpg\",\"extraDisplayInfo\":{\"exposeTag\":null,\"showStyle\":0,\"exposeTagInfoList\":null},\"privacyInfo\":{\"appInfo\":{\"appName\":\"UC浏览器极速版\",\"appVersion\":\"13.7.6.1138\",\"packageSize\":26829602,\"updateTime\":1650792828275,\"developer\":\"优视科技（中国）有限公司\",\"appDetailImg\":\"\"},\"appPermissions\":[{\"permissionName\":\"android.permission.ACCESS_COARSE_LOCATION\",\"permissionDetail\":\"允许程序通过WiFi或移动基站的方式获取用户粗略位置信息\"},{\"permissionName\":\"android.permission.ACCESS_FINE_LOCATION\",\"permissionDetail\":\"允许程序通过GPS芯片接收卫星的定位信息\"},{\"permissionName\":\"android.permission.READ_PHONE_STATE\",\"permissionDetail\":\"允许程序访问电话状态\"},{\"permissionName\":\"android.permission.CAMERA\",\"permissionDetail\":\"允许程序访问摄像头进行拍照\"},{\"permissionName\":\"android.permission.READ_EXTERNAL_STORAGE\",\"permissionDetail\":\"允许程序可以读取设备外部存储空间\"},{\"permissionName\":\"android.permission.WRITE_EXTERNAL_STORAGE\",\"permissionDetail\":\"允许程序写入外部存储，如SD卡上写文件\"},{\"permissionName\":\"android.permission.RECORD_AUDIO\",\"permissionDetail\":\"允许程序录制声音通过手机或耳机的麦克\"},{\"permissionName\":\"android.permission.READ_CALENDAR\",\"permissionDetail\":\"允许程序读取用户的日程信息\"},{\"permissionName\":\"android.permission.WRITE_CALENDAR\",\"permissionDetail\":\"允许程序写入日程，但不可读取\"}],\"privacyPolicyUrl\":\"https://terms.alicdn.com/legal-agreement/terms/suit_bu1_uc/suit_bu1_uc202011201509_87048.html\"}}",
+                    "h5Url": "https://activity.e.kuaishou.com/ksDownloadPage/",
+                    "inspireAdInfo": {
+                        "enableClickOtherArea": true,
+                        "inspireAdBillTime": 20000,
+                        "supportLiveReservation": false
+                    },
+                    "inspirePersonalize": {
+                        "awardPersonalized": true,
+                        "awardValue": "50"
+                    },
+                    "iosAppId": "",
+                    "iosPageId": "",
+                    "itemClickUrls": {
+                        "actionBarClickUrls": {
+                            "appLink": "",
+                            "url": ""
+                        }
+                    },
+                    "landingPageInfo": {
+                        "commentTagVisible": true
+                    },
+                    "marketUri": "market://details?id=com.ucmobile.lite",
+                    "negativeMenuInfo": {
+                        "negativeMenus": [
+                            {
+                                "id": 7,
+                                "name": "不喜欢: UC浏览器极速版",
+                                "clickAction": 2,
+                                "url": "",
+                                "icon": "https://static.yximgs.com/udata/pkg/ks-dark/dislike_icon_yiji_normal.png"
+                            },
+                            {
+                                "id": 8,
+                                "name": "不喜欢: 工具类软件广告",
+                                "clickAction": 2,
+                                "url": "",
+                                "icon": "https://static.yximgs.com/udata/pkg/ks-dark/dislike_icon_similarpost_normal.png"
+                            },
+                            {
+                                "id": 11,
+                                "name": "不感兴趣",
+                                "clickAction": 3,
+                                "icon": "https://static.yximgs.com/udata/pkg/ks-dark/feed_negative_dislike_v3.png"
+                            },
+                            {
+                                "id": 12,
+                                "name": "不感兴趣",
+                                "clickAction": 3,
+                                "icon": "https://static.yximgs.com/udata/pkg/ks-dark/negative_dislike_v4.png",
+                                "desc": "减少此类内容"
+                            },
+                            {
+                                "id": 13,
+                                "name": "不感兴趣该内容",
+                                "clickAction": 2
+                            },
+                            {
+                                "id": 14,
+                                "name": "举报",
+                                "clickAction": 1,
+                                "url": "https://activity.e.kuaishou.com/pages/report?layoutType=4&bizId=ad_fe_full_loading&photoId=73025345903",
+                                "icon": "https://static.yximgs.com/udata/pkg/ks-dark/feed_negative_report_v3.png"
+                            },
+                            {
+                                "id": 15,
+                                "name": "举报",
+                                "clickAction": 1,
+                                "url": "https://activity.e.kuaishou.com/pages/report?layoutType=4&bizId=ad_fe_full_loading&photoId=73025345903",
+                                "icon": "https://static.yximgs.com/udata/pkg/ks-dark/negative_report_v4.png",
+                                "desc": "低俗色情、虚假诈欺等"
+                            },
+                            {
+                                "id": 16,
+                                "name": "为何看到此广告",
+                                "clickAction": 2,
+                                "url": "https://activity.e.kuaishou.com/pages/report/why-show-ad-dialog?layoutType=4&bizId=ad_fe_full_loading",
+                                "icon": "https://static.yximgs.com/udata/pkg/ks-dark/layer_ad_reason_icon.png"
+                            },
+                            {
+                                "id": 17,
+                                "name": "为何看到此广告",
+                                "clickAction": 1,
+                                "url": "https://activity.e.kuaishou.com/pages/report/why-show-ad-full?layoutType=4&bizId=ad_fe_full_loading&noBackNavi=true",
+                                "icon": "https://static.yximgs.com/udata/pkg/ks-dark/negative_reason_v2.png"
+                            },
+                            {
+                                "id": 18,
+                                "name": "为何看到此广告",
+                                "clickAction": 1,
+                                "url": "https://activity.e.kuaishou.com/pages/report/why-show-ad-full?layoutType=4&bizId=ad_fe_full_loading&noBackNavi=true",
+                                "icon": "https://static.yximgs.com/udata/pkg/ks-dark/feed_negative_reason_v3.png"
+                            }
+                        ],
+                        "feedNegativeMenu": [
+                            {
+                                "menuId": 12,
+                                "title": "你不感兴趣这条广告的原因？",
+                                "subMenuIds": [
+                                    13,
+                                    7,
+                                    8
+                                ]
+                            },
+                            {
+                                "menuId": 15
+                            },
+                            {
+                                "menuId": 17
+                            }
+                        ],
+                        "detailNegativeMenu": [
+                            {
+                                "menuId": 11,
+                                "title": "你不感兴趣这条广告的原因？",
+                                "subMenuIds": [
+                                    13,
+                                    7,
+                                    8
+                                ]
+                            },
+                            {
+                                "menuId": 14
+                            },
+                            {
+                                "menuId": 16
+                            }
+                        ],
+                        "thanosDetailNegativeMenu": [
+                            {
+                                "menuId": 11,
+                                "title": "你不感兴趣这条广告的原因？",
+                                "subMenuIds": [
+                                    13,
+                                    7,
+                                    8
+                                ]
+                            },
+                            {
+                                "menuId": 14
+                            },
+                            {
+                                "menuId": 18
+                            }
+                        ],
+                        "negativeStyle": 3
+                    },
+                    "originStyleInfo": {
+                        "actionBarBgColor": "e55700",
+                        "actionBarDesc": "兄弟让我来这里赚零花钱，还真领到了红包，提现又快又简单",
+                        "actionBarTagColor": "c64b00",
+                        "actionBarText": "下载领钱",
+                        "appIconUrl": "https://static.yximgs.com/udata/pkg/05f2b99c2adc485eacd8168090abaccd.jpg",
+                        "appName": "UC浏览器极速版",
+                        "appScore": "0",
+                        "consultId": "0",
+                        "photoUserInfo": {},
+                        "productIconUrl": "https://static.yximgs.com/udata/pkg/05f2b99c2adc485eacd8168090abaccd.jpg",
+                        "productName": "UC浏览器极速版",
+                        "secondIndustryName": "工具类软件",
+                        "showPlayEndInfo": true
+                    },
+                    "playEndInfo": {
+                        "actionBarColor": "e55700",
+                        "playEndStyle": 1,
+                        "showEndOption": false,
+                        "tagColor": "b14300"
+                    },
+                    "playedReportRate": [
+                        0.75
+                    ],
+                    "playedReportTime": [
+                        7000,
+                        10000,
+                        18000
+                    ],
+                    "posId": "54",
+                    "privacyOption": {
+                        "showPhotoRiskTip": true,
+                        "showH5RiskTip": true,
+                        "displayPosition": 2,
+                        "riskTipText": "您访问的网站由第三方提供",
+                        "appInfo": {
+                            "appName": "UC浏览器极速版",
+                            "appVersion": "13.7.6.1138",
+                            "packageSize": 26829602,
+                            "updateTime": 1650792828275,
+                            "developer": "优视科技（中国）有限公司",
+                            "appDetailImg": ""
+                        },
+                        "style": 0,
+                        "photoRiskTipUrl": "https://activity.e.kuaishou.com/privacyProtect/",
+                        "appDisplayText": "应用名：UC浏览器极速版；版本号：13.7.6.1138；应用大小：25.0M；开发者：优视科技（中国）有限公司",
+                        "links": [
+                            {
+                                "linkText": "应用权限",
+                                "linkUrl": "https://activity.e.kuaishou.com/privacyProtect-v2/"
+                            },
+                            {
+                                "linkText": "隐私政策",
+                                "linkUrl": "https://terms.alicdn.com/legal-agreement/terms/suit_bu1_uc/suit_bu1_uc202011201509_87048.html"
+                            }
+                        ]
+                    },
+                    "templateDatas": [
+                        {
+                            "actionBarType": 11,
+                            "data": "{\"buttonHeight\":36,\"appName\":\"UC浏览器极速版\",\"description\":\"兄弟让我来这里赚零花钱，还真领到了红包，提现又快又简单\",\"actionBarBgColor\":\"E6C345\",\"actionBar\":\"立即下载\",\"hideActionBarLoad\":false,\"downloadActionBarType\":1}",
+                            "displayLocation": 1,
+                            "resourceType": 11,
+                            "styleType": 3,
+                            "templateDelayTime": 9000,
+                            "templateId": "adtk-action-bar-ad-v11",
+                            "templateShowTime": 0
+                        },
+                        {
+                            "cardType": 11,
+                            "data": "{\"subTitle\":\"兄弟让我来这里赚零花钱，还真领到了红包，提现又快又简单\",\"displayInfo\":{\"actionBar\":\"立即下载\",\"actionBarBgColor\":\"E6C345\"},\"iconUrl\":\"https://static.yximgs.com/udata/pkg/05f2b99c2adc485eacd8168090abaccd.jpg\",\"title\":\"UC浏览器极速版\"}",
+                            "displayLocation": 0,
+                            "resourceType": 11,
+                            "styleType": 2,
+                            "templateDelayTime": 9000,
+                            "templateId": "adtk-card-ad-v3",
+                            "templateShowTime": 0
+                        },
+                        {
+                            "commentActionBarType": 1,
+                            "data": "{\"hideIcon\":false,\"subTitle\":\"兄弟让我来这里赚零花钱，还真领到了红包，提现又快又简单\",\"iconUrl\":\"https://static.yximgs.com/udata/pkg/05f2b99c2adc485eacd8168090abaccd.jpg\",\"title\":\"UC浏览器极速版\",\"actionBar\":\"立即下载\",\"actionBarBgColor\":\"E6C345\"}",
+                            "displayLocation": 0,
+                            "resourceType": 1,
+                            "styleType": 8,
+                            "templateDelayTime": 9000,
+                            "templateId": "adtk-comment-actionbar",
+                            "templateShowTime": 0
+                        }
+                    ],
+                    "useAppMarket": true,
+                    "webviewType": 0
+                },
+                "adDescription": "兄弟让我来这里赚零花钱，还真领到了红包，提现又快又简单",
+                "smallIcon": null,
+                "merchantEnhanceDisplay": null,
+                "hasNewStyle": 0,
+                "missionId": 0,
+                "taskId": 0,
+                "adRerankInfo": {
+                    "pos": 5,
+                    "rankType": 3
+                },
+                "adStyle": 0,
+                "deviceInfo": null,
+                "styles": {
+                    "templates": [
+                        {
+                            "templateId": "adtk-action-bar-ad-v11",
+                            "templateUrl": "https://p1.adkwai.com/kos/nlav11461/r_adtk-action-bar-ad-v11.137.js",
+                            "templateVersion": "1.3.7",
+                            "templateVersionCode": 137,
+                            "templateMd5": "f9f601f35780e17e028a0fb14a293b87"
+                        },
+                        {
+                            "templateId": "adtk-card-ad-v3",
+                            "templateUrl": "https://js.a.kspkg.com/kos/nlav10814/r_adtk-card-ad-v3.114.js",
+                            "templateVersion": "1.1.4",
+                            "templateVersionCode": 114,
+                            "templateMd5": "98346d7c166f0c3fac364eb5236c08be"
+                        },
+                        {
+                            "templateId": "adtk-comment-actionbar",
+                            "templateUrl": "https://p1.adkwai.com/kos/nlav11461/r_adtk-comment-actionbar.103.js",
+                            "templateVersion": "1.0.3",
+                            "templateVersionCode": 103,
+                            "templateMd5": "71b760ec732ec84400a7886e5682cf46"
+                        }
+                    ]
+                },
+                "universeConfig": null,
+                "callbackParam": null,
+                "layout": null,
+                "playEndInfo": {
+                    "playEndStyle": 1000
+                },
+                "adTypeForGap": 1,
+                "enableRetainTopAd": false,
+                "supConversionType": null,
+                "disableFansTopDetailIconClick": false,
+                "switchBit": 1
+            },
+            "comments": [],
+            "us_c": 0,
+            "slideCommentEntryDisabled": false,
+            "comment_count": 0,
+            "type": 1,
+            "main_url": "http://tx2.a.yximgs.com/udata/pkg/smart_1611ff4587b04608abe7ed6d0dee6d55.kpg",
+            "liked": 0,
+            "main_mv_url": "https://alimov2.a.kwimgs.com/upic/2022/04/27/13/BMjAyMjA0MjcxMzU0NDRfMjgzOTIxNzg0NF83MzAyNTM0NTkwM18wXzM=_b_B29fbfa73e6831a2d23b7e7f7d51d5f32.mp4?tag=1-1651475119-unknown-0-iqcma4czak-9ee94425bc829b83&clientCacheKey=3xp45spxtmpufa2_b.mp4&tt=b&di=70271aa3&bp=13291",
+            "comment_count": 0,
+            "ext_params": {
+                "mtype": 3,
+                "color": "EAEAEA",
+                "w": 720,
+                "sound": 0,
+                "h": 1280,
+                "interval": 24,
+                "video": 27708
+            },
+            "cover_urls": [
+                {
+                    "url": "http://tx2.a.yximgs.com/udata/pkg/smart_1611ff4587b04608abe7ed6d0dee6d55.kpg"
+                }
+            ],
+            "thumbnail_url": "http://tx2.a.yximgs.com/udata/pkg/smart_1611ff4587b04608abe7ed6d0dee6d55.kpg",
+            "main_mv_urls": [
+                {
+                    "url": "https://alimov2.a.kwimgs.com/upic/2022/04/27/13/BMjAyMjA0MjcxMzU0NDRfMjgzOTIxNzg0NF83MzAyNTM0NTkwM18wXzM=_b_B29fbfa73e6831a2d23b7e7f7d51d5f32.mp4?tag=1-1651475119-unknown-0-iqcma4czak-9ee94425bc829b83&clientCacheKey=3xp45spxtmpufa2_b.mp4&tt=b&di=70271aa3&bp=13291"
+                }
+            ],
+            "cover_thumbnail_urls": [
+                {
+                    "url": "http://tx2.a.yximgs.com/udata/pkg/smart_1611ff4587b04608abe7ed6d0dee6d55.kpg"
+                }
+            ],
+            "thumbnail_urls": [
+                {
+                    "url": "http://tx2.a.yximgs.com/udata/pkg/smart_1611ff4587b04608abe7ed6d0dee6d55.kpg"
+                }
+            ],
+            "exp_tag": "1_u/2005132693113213089_hd0",
+            "profilePagePrefetchInfo": {
+                "profilePageType": 1
+            },
+            "override_cover_size": {
+                "width": 360,
+                "height": 640
+            },
+            "followShoot": {
+                "isLipsSyncPhoto": false
+            },
+            "extEntry": null,
+            "serverExpTag": "feed_photo|5201657643371438383|2839217844|1_u/2005132693113213089_hd0",
+            "user_id": 2839217844,
+            "feedLogCtx": {
+                "stidContainer": "CkMxfDIwMDUxMzI2OTMxMTMyMTMwODl8cGhvdG86NTIwMTY1NzY0MzM3MTQzODM4M3x7InBnIjoiaGQifXx7InIiOjB9"
+            }
+        }
+    ],
+    "error_msg": "OK"
+}
