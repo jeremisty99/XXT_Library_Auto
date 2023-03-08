@@ -13,5 +13,6 @@
 
 新增的滑动验证码部分 逻辑主要参考了**9cats**的 <a href="https://github.com/9cats/caviar">caviar项目</a> 具体识别部分采用了 <a href="https://github.com/sml2h3/ddddocr">ddddocr</a>完成
 
-本项目仅供学习参考使用 项目代码质量较差且不保证未来维护
-滥用本项目代码所导致的一切后果与作者本人无关
+本项目仅供**学习参考**使用 项目代码质量较差且**不保证未来维护**
+
+<font size="5" color="#ff7354">**滥用本项目代码所导致的一切后果与作者本人无关**<font>
