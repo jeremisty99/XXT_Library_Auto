@@ -1,21 +1,25 @@
 import queue
 import re
 import threading
-
+from lxml import etree
+import check
 import requests
 import base64
 import time
 from datetime import date, timedelta
 
+from Crypto.Cipher import AES
+
 
 class Library:
-    def __init__(self, phone, password):
-        self.today = (date.today() + timedelta(days=1)).strftime("%Y-%m-%d")
+    def __init__(self, phone, password, version):
+        self.version = version  # 当前系统是否为旧版 0为旧版
+        self.today = (date.today()).strftime("%Y-%m-%d")
         self.tomorrow = (date.today() + timedelta(days=1)).strftime("%Y-%m-%d")
-        self.acc = phone
-        self.pwd = password
-        self.deptIdEnc = ""
-        self.deptId = ""
+        self.acc = self.encrypt(phone)
+        self.pwd = self.encrypt(password)
+        self.deptIdEnc = None
+        self.deptId = None
         self.status = {
             '0': '待履约',
             '1': '学习中',
@@ -26,14 +30,8 @@ class Library:
         }
         self.room = None
         self.room_id_capacity = {}
-        self.db = {
-            'sb': 0,
-            'nb': 0
-        }
-        # with open('./info.json', 'r', encoding='utf8') as fp:
-        #     all_seat = json.load(fp)
-        self.all_seat = []
         self.room_id_name = {}
+        self.all_seat = []
         self.emptyInfo = []
         self.session = requests.session()
         self.session.headers = {
@@ -43,9 +41,39 @@ class Library:
         self.login()
 
     @classmethod
-    def t_time(cls, timestamp, t_type):
-        t_format = "%Y-%m-%d %H:%M:%S" if t_type == 1 else "%H:%M:%S"
-        return time.strftime(t_format, time.localtime(int(str(timestamp)[0:10])))
+    def encrypt(cls, input):
+        key = "u2oh6Vu^HWe4_AES"
+        aeskey = key.encode('utf-8')
+        iv = key.encode('utf-8')
+
+        # 使用 CBC 模式和 PKCS7 填充
+        CBCOptions = AES.new(aeskey, AES.MODE_CBC, iv=iv)
+        pad = lambda s: s + (AES.block_size - len(s) % AES.block_size) * chr(AES.block_size - len(s) % AES.block_size)
+        secretData = pad(input).encode('utf-8')
+
+        # 加密并返回 Base64 编码后的密文
+        encrypted = CBCOptions.encrypt(secretData)
+        return base64.b64encode(encrypted).decode('utf-8')
+
+    @classmethod
+    def t_time(cls, timestamp):
+        return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(int(str(timestamp)[0:10])))
+
+    @classmethod
+    def get_date(cls):
+        return time.strftime('%a %b %d %Y %I:%M:%S GMT+0800 ', time.localtime(time.time())) + '(中国标准时间)'
+
+    @classmethod
+    def t_second(cls, timestamp):
+        if timestamp:
+            m, s = divmod(int(str(timestamp)[0:-3]), 60)
+            h, m = divmod(m, 60)
+            if m:
+                if h:
+                    return str(h) + "时" + str(m) + "分" + str(s) + "秒"
+                return str(m) + "分" + str(s) + "秒"
+            return str(s) + "秒"
+        return "0秒"
 
     def login(self):
         c_url = 'https://passport2.chaoxing.com/mlogin?' \
@@ -56,13 +84,60 @@ class Library:
         data = {
             'fid': '-1',
             'uname': self.acc,
-            'password': base64.b64encode(self.pwd.encode()).decode(),
+            'password': self.pwd,
             'refer': 'http%3A%2F%2Foffice.chaoxing.com%2Ffront%2Fthird%2Fapps%2Fseat%2Findex',
-            't': 'true'
+            't': 'true',
+            'forbidotherlogin': 0,
+            'validate': 0,
+            'doubleFactorLogin': 0,
+            'independentId': 0,
         }
         self.session.post('https://passport2.chaoxing.com/fanyalogin', data=data)
         s_url = 'https://office.chaoxing.com/front/third/apps/seat/index'
         self.session.get(s_url)
+
+    def get_fidEnc(self):
+        data = {
+            'searchName': '',
+            '_t': self.get_date()
+        }
+        res = self.session.post(url='https://i.chaoxing.com/base/cacheUserOrg', data=data)
+        print(res.json()["site"][0]['schoolname'], res.json()["site"][1]['schoolname'])  # 默认显示单位的前两个名称如果是多个单位请自行修改
+        for index in res.json()["site"]:
+            fid = index['fid']
+            res = self.session.get(url='https://uc.chaoxing.com/mobileSet/homePage?'
+                                       f'fid={fid}')
+            selector = etree.HTML(res.text)
+            mappid = selector.xpath(
+                '/html/body/div[1]/div[3]/ul/li[1]/@onclick')  # ☆ 注意 这一步可能需要调整 否则不能正常获取到mappid 每个学校不一样此处就没有用RE ☆
+            if mappid:
+                self.mappid = mappid[0].split('(')[1].split(',')[0]
+        self.incode = self.session.cookies.get_dict()['wfwIncode']
+        url = f'https://v1.chaoxing.com/mobile/openRecentApp?incode={self.incode}&mappId={self.mappid}'
+        res = self.session.get(url=url, allow_redirects=False)
+        # 每个学校的deptIdEnc值是固定的，如果是为只为你的学校提供服务请直接将deptIdEnc保存！不需要再执行get_fidEnc()方法了
+        self.deptIdEnc = re.compile("fidEnc%3D(.*?)%").findall(res.headers['Location'])[0]
+        print(self.deptIdEnc)
+
+    def get_seat_reservation_info(self):
+        if self.version == 0:
+            response = \
+                self.session.get(url='https://office.chaoxing.com/data/apps/seatengine/reservelist?seatId=602').json()[
+                    'data']['reserveList']
+        else:
+            response = self.session.get(url='https://office.chaoxing.com/data/apps/seat/reservelist?'
+                                            'indexId=0&'
+                                            'pageSize=100&'
+                                            'type=-1').json()['data']['reserveList']
+        for index in response:
+            if index['type'] == -1:
+                print(index['seatNum'], index['id'], index['firstLevelName'], index['secondLevelName'],
+                      index['thirdLevelName'], self.t_time(index['startTime']), self.t_time(index['endTime']),
+                      self.t_second(index['learnDuration']), self.status[str(index['status'])])
+            else:
+                print(index['seatNum'], index['id'], index['firstLevelName'], index['secondLevelName'],
+                      index['thirdLevelName'], self.t_time(index['startTime']), self.t_time(index['endTime']),
+                      self.t_second(index['learnDuration']), '违约')
 
     # 签到
     def sign(self):
@@ -142,10 +217,16 @@ class Library:
 
     # 获取到最近一次预约的座位ID
     def get_my_seat_id(self):
-        response = self.session.get(url='https://office.chaoxing.com/data/apps/seat/reservelist?'
-                                        'indexId=0&'
-                                        'pageSize=100&'
-                                        'type=-1').json()['data']['reserveList']
+        # seatId 不一定为602 仅为演示
+        if self.version == 0:
+            response = \
+                self.session.get(url='https://office.chaoxing.com/data/apps/seatengine/reservelist?seatId=602').json()[
+                    'data']['reserveList']
+        else:
+            response = self.session.get(url='https://office.chaoxing.com/data/apps/seat/reservelist?'
+                                            'indexId=0&'
+                                            'pageSize=100&'
+                                            'type=-1').json()['data']['reserveList']
         result = []
         for index in response:
             if index['type'] == -1:
@@ -153,48 +234,67 @@ class Library:
                     result.append(index)
         return result
 
-    # 预约座位 需要自己修改
+    # 旧版系统预约
     def submit(self, seatNum, day):
-        # 注意 老版本的系统需要将url中的seat改为seatengine且不需要第一步获取list。有可能需要提供seatId的值
-        # 获取token
-        response = self.session.get(url='https://office.chaoxing.com/front/apps/seat/list?'
-                                        f'deptIdEnc={self.deptIdEnc}')
-        pageToken = re.compile(r"&pageToken=' \+ '(.*)' \+ '&").findall(response.text)[0]
-        response = self.session.get(url='https://office.chaoxing.com/front/apps/seat/select?'
-                                        'id=3752&'  # 房间id roomId 可以从self.room_id_name获取 请自行发挥
-                                        f'day={day}&'  # 预约时间 上下需保持一致
-                                        'backLevel=2&'  # 必须的参数2
-                                        f'pageToken={pageToken}')
-        token = re.compile("token: '(.*)'").findall(response.text)[0]
-        response = self.session.get(url='https://office.chaoxing.com/data/apps/seat/submit?'
-                                        'roomId=3752&'  # 房间id roomId 上下需保持一致
-                                        'startTime=9%3A30&'  # 开始时间%3A代表: 自行替换9（小时）和后面00（分钟） 必须
-                                        'endTime=22%3A00&'  # 结束时间 规则同上
-                                        f'day={day}&'  # 预约时间 上下需保持一致
-                                        f'seatNum={seatNum}&'  # 座位数字 与桌上贴纸一致
-                                        f'token={token}')
-        seat_result = response.json()
-        print(seat_result)
-
+        if self.version == 0:
+            # 旧版不需要pageToken
+            response = self.session.get(url='https://office.chaoxing.com/front/apps/seatengine/select?'
+                                            'id=3833&seatId=602&fidEnc=991fe2698ebc49b9'  # 房间id roomId 可以从self.room_id_name获取 请自行发挥
+                                            f'day={day}&'  # 预约时间 上下需保持一致
+                                            'backLevel=2')  # 必须的参数2
+            token = re.compile("token = '(.*)'").findall(response.text)[0]
+            # 滑动验证码
+            captcha = check.check_captcha(self.session)
+            # print(captcha)
+            response = self.session.get(url='https://office.chaoxing.com/data/apps/seatengine/submit?'
+                                            'roomId=3833&seatId=602&'  # 房间id roomId 上下需保持一致
+                                            'startTime=08%3A30&'  # 开始时间%3A代表: 自行替换9（小时）和后面00（分钟） 必须
+                                            'endTime=11%3A30&'  # 结束时间 规则同上
+                                            f'day={day}&'  # 预约时间 上下需保持一致
+                                            f'seatNum={seatNum}&'  # 座位数字 与桌上贴纸一致
+                                            f'token={token}&'
+                                            f'captcha={captcha}')
+            seat_result = response.json()
+        else:
+            response = self.session.get(url='https://office.chaoxing.com/front/apps/seat/list?'
+                                            f'deptIdEnc={self.deptIdEnc}')
+            pageToken = re.compile(r"&pageToken=' \+ '(.*)' \+ '&").findall(response.text)[0]
+            response = self.session.get(url='https://office.chaoxing.com/front/apps/seat/select?'
+                                            'id=3781&seatId=602'  # 房间id roomId 可以从self.room_id_name获取 请自行发挥
+                                            f'day={day}&'  # 预约时间 上下需保持一致
+                                            'backLevel=2&'  # 必须的参数2
+                                            f'pageToken={pageToken}')
+            token = re.compile("token: '(.*)'").findall(response.text)[0]
+            response = self.session.get(url='https://office.chaoxing.com/data/apps/seat/submit?'
+                                            'roomId=3781&seatId=602&'  # 房间id roomId 上下需保持一致
+                                            'startTime=20%3A30&'  # 开始时间%3A代表: 自行替换9（小时）和后面00（分钟） 必须
+                                            'endTime=22%3A30&'  # 结束时间 规则同上
+                                            f'day={day}&'  # 预约时间 上下需保持一致
+                                            f'seatNum={seatNum}&'  # 座位数字 与桌上贴纸一致
+                                            f'token={token}')
+            seat_result = response.json()
         if seat_result["success"]:
             info = seat_result["data"]["seatReserve"]
             seatInfo = info["firstLevelName"] + info["secondLevelName"] + info["thirdLevelName"] + info["seatNum"]
-            startTime = self.t_time(info["startTime"], 1)
-            endTime = self.t_time(info["endTime"], 2)
+            startTime = self.t_time(info["startTime"])
+            endTime = self.t_time(info["endTime"])
             lastTime = info["duration"]
             print("预约成功! {}\n{}至{}共{}小时".format(seatInfo, startTime, endTime, lastTime))
 
     # 获取图书馆所有的房间和座位
     def get_all_room_and_seat(self):
-        # 注意 老版本的系统需要将url中的seat改为seatengine，且可能需要附带seatId的值
-        response = self.session.get(url='https://office.chaoxing.com/data/apps/seat/room/list?'
+        if self.version == 0:
+            # 注意 老版本的系统需要将url中的seat改为seatengine，且可能需要附带seatId的值
+            response = self.session.get('https://office.chaoxing.com/data/apps/seatengine/room/list?seatId=602&'
                                         f'deptIdEnc={self.deptIdEnc}')
+        else:
+            response = self.session.get(url='https://office.chaoxing.com/data/apps/seat/room/list?'
+                                            f'deptIdEnc={self.deptIdEnc}')
         self.room = response.json()['data']['seatRoomList']
-        # deptId = self.room[0]['deptId']
+        deptId = self.room[0]['deptId']
 
         for index in self.room:
             self.room_id_capacity[index['id']] = index['capacity']
-            self.db[index['id']] = 0
             self.room_id_name[index['id']] = index['firstLevelName'] + index['secondLevelName'] + index[
                 'thirdLevelName']
             response = self.session.get(url='https://office.chaoxing.com/data/apps/seat/seatgrid/roomid?'
@@ -205,13 +305,13 @@ class Library:
     # 获取学习人数分布 多线程 2000座约10s
     # 注意 老版本的系统接口可能不能获取到
     def get_study_info(self):
+        print("开始获取")
         q = queue.Queue()
         for item in self.all_seat:
-            # print(item["roomId"])
             if item["roomId"] == 3752:
                 q.put(item)
         ths = []
-        for idx in range(0, 233):
+        for idx in range(0, 127):
             ths.append(
                 threading.Thread(target=self.get_seat_info, args=(q,))
             )
@@ -219,18 +319,6 @@ class Library:
             th.start()
         for th in ths:
             th.join()
-
-        # print('有人\t', '没人\t', '总共\t', '地点\t')
-        # for index in self.room:
-        #     print(self.db[index['id']], ' ', '\t', self.room_id_capacity[index['id']] - self.db[index['id']], '\t',
-        #           self.room_id_capacity[index['id']], '\t', self.room_id_name[index['id']])
-        # print(self.db['sb'], '\t', self.db['nb'], '\t', len(self.all_seat))
-
-        # 筛选座位 修改145可以看所有楼层的145座位信息 自行发挥
-        # for index in self.all_seat:
-        #     if index['seatNum'] == '145':
-        #         print(index['seatNum'], index['id'], index['roomId'], self.room_id_name[index['roomId']])
-        #     continue
 
     # 获取座位详细信息 配合get_study_info
     def get_seat_info(self, q: queue.Queue):
@@ -243,15 +331,12 @@ class Library:
             # print(response)
             try:
                 data = response["data"]
-                # r = data["seatReserve"]
-                self.db[seat['roomId']] += 1
-                self.db['sb'] += 1
+                r = data["seatReserve"]
             except:
-                self.db['nb'] += 1
-                if int(seat['seatNum']) % 2 == 1:
-                    usedTime = self.get_used_times(seat['roomId'], seat['seatNum'], self.today)
-                    self.emptyInfo.append(
-                        str(self.room_id_name[seat['roomId']] + seat['seatNum'] + '目前无人使用\n' + usedTime))
+                # if int(seat['seatNum']) % 2 == 1:
+                usedTime = self.get_used_times(seat['roomId'], seat['seatNum'], self.today)
+                self.emptyInfo.append(
+                    str(self.room_id_name[seat['roomId']] + seat['seatNum'] + '目前无人使用\n' + usedTime))
             if q.empty():
                 break
 
@@ -281,4 +366,4 @@ class Library:
 
 
 if __name__ == '__main__':
-    lib = Library("", "")
+    lib = Library("手机号", "密码", "版本:新版本为1/旧版本为0")
