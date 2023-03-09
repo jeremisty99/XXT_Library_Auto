@@ -283,24 +283,30 @@ class Library:
 
     # 获取图书馆所有的房间和座位
     def get_all_room_and_seat(self):
-        if self.version == 0:
-            # 注意 老版本的系统需要将url中的seat改为seatengine，且可能需要附带seatId的值
-            response = self.session.get('https://office.chaoxing.com/data/apps/seatengine/room/list?seatId=602&'
-                                        f'deptIdEnc={self.deptIdEnc}')
-        else:
-            response = self.session.get(url='https://office.chaoxing.com/data/apps/seat/room/list?'
+        if self.deptIdEnc:
+            if self.version == 0:
+                # 注意 老版本的系统需要将url中的seat改为seatengine，且可能需要附带seatId的值
+                response = self.session.get('https://office.chaoxing.com/data/apps/seatengine/room/list?seatId=602&'
                                             f'deptIdEnc={self.deptIdEnc}')
-        self.room = response.json()['data']['seatRoomList']
-        deptId = self.room[0]['deptId']
-
-        for index in self.room:
-            self.room_id_capacity[index['id']] = index['capacity']
-            self.room_id_name[index['id']] = index['firstLevelName'] + index['secondLevelName'] + index[
-                'thirdLevelName']
-            response = self.session.get(url='https://office.chaoxing.com/data/apps/seat/seatgrid/roomid?'
-                                            'roomId={}'.format(index['id']))
-            self.all_seat += response.json()['data']['seatDatas']
-        print("ALL获取完成")
+            else:
+                response = self.session.get(url='https://office.chaoxing.com/data/apps/seat/room/list?'
+                                                f'deptIdEnc={self.deptIdEnc}')
+            self.room = response.json()['data']['seatRoomList']
+            deptId = self.room[0]['deptId']
+            for index in self.room:
+                self.room_id_capacity[index['id']] = index['capacity']
+                self.room_id_name[index['id']] = index['firstLevelName'] + index['secondLevelName'] + index[
+                    'thirdLevelName']
+                if self.version == 0:
+                    response = self.session.get(url='https://office.chaoxing.com/data/apps/seatengine/seatgrid/roomid?'
+                                                    'roomId={}'.format(index['id']))
+                else:
+                    response = self.session.get(url='https://office.chaoxing.com/data/apps/seat/seatgrid/roomid?'
+                                                    'roomId={}'.format(index['id']))
+                self.all_seat += response.json()['data']['seatDatas']
+            print("座位信息获取完成")
+        else:
+            print("请先获取deptIdEnc")
 
     # 获取学习人数分布 多线程 2000座约10s
     # 注意 老版本的系统接口可能不能获取到
@@ -328,12 +334,10 @@ class Library:
             # 注意 老版本的系统不支持此接口
             response = self.session.get(url='https://office.chaoxing.com/data/apps/seat/reserve/info?'
                                             'id={0}&seatNum={1}'.format(seat['roomId'], seat['seatNum'])).json()
-            # print(response)
             try:
                 data = response["data"]
                 r = data["seatReserve"]
             except:
-                # if int(seat['seatNum']) % 2 == 1:
                 usedTime = self.get_used_times(seat['roomId'], seat['seatNum'], self.today)
                 self.emptyInfo.append(
                     str(self.room_id_name[seat['roomId']] + seat['seatNum'] + '目前无人使用\n' + usedTime))

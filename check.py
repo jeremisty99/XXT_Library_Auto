@@ -6,7 +6,7 @@ import execjs
 
 
 def check_captcha(session):
-    with open('./generateCaptchaKey.js.js', encoding='utf-8') as f:
+    with open('./generateCaptchaKey.js', encoding='utf-8') as f:
         js = f.read()
 
     # 通过compile命令转成一个js对象
