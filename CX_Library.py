@@ -18,6 +18,7 @@ class Library:
         self.tomorrow = (date.today() + timedelta(days=1)).strftime("%Y-%m-%d")
         self.acc = self.encrypt(phone)
         self.pwd = self.encrypt(password)
+        self.seatId = None  # 旧版系统参数
         self.deptIdEnc = None
         self.deptId = None
         self.status = {
@@ -107,16 +108,41 @@ class Library:
             fid = index['fid']
             res = self.session.get(url='https://uc.chaoxing.com/mobileSet/homePage?'
                                        f'fid={fid}')
-            selector = etree.HTML(res.text)
-            mappid = selector.xpath(
-                '/html/body/div[1]/div[3]/ul/li[1]/@onclick')  # ☆ 注意 这一步可能需要调整 否则不能正常获取到mappid 每个学校不一样此处就没有用RE ☆
-            if mappid:
-                self.mappid = mappid[0].split('(')[1].split(',')[0]
-        self.incode = self.session.cookies.get_dict()['wfwIncode']
-        url = f'https://v1.chaoxing.com/mobile/openRecentApp?incode={self.incode}&mappId={self.mappid}'
-        res = self.session.get(url=url, allow_redirects=False)
-        # 每个学校的deptIdEnc值是固定的，如果是为只为你的学校提供服务请直接将deptIdEnc保存！不需要再执行get_fidEnc()方法了
-        self.deptIdEnc = re.compile("fidEnc%3D(.*?)%").findall(res.headers['Location'])[0]
+            # 使用正则表达式匹配openApp()中的内容
+            pattern = r'openApp\((\d+),(\d+),\'(.+?)\',\'.*?(座位|预约).*?\'\)'  # 这一步可能根据学校页面自行调整 目的是找到图书馆座位预约首页
+            match = re.search(pattern, res.text)
+            if match:
+                mAppId = match.group(1)
+                AppId = match.group(2)
+                app_visit_url = "http://uc.chaoxing.com/mobile/addAppVisit"
+                app_visit_data = {"mAppId": mAppId}
+                self.session.post(app_visit_url, data=app_visit_data, verify=False)
+                get_tally_info_url = "http://uc.chaoxing.com/mobile/getTallyInfo"
+                get_tally_info_data = {"id": AppId, "mAppId": mAppId}
+                get_tally_info_response = self.session.post(get_tally_info_url, data=get_tally_info_data, verify=False)
+                data = get_tally_info_response.json()
+                if data["status"]:
+                    get_app_info_url = "http://uc.chaoxing.com/mobileSet/getAppInfo"
+                    get_app_info_params = {
+                        "id": AppId,
+                        "mAppId": mAppId,
+                        "roleId": data["roleId"],
+                        "deptId": data["deptId"],
+                        "fid": data["fid"],
+                        "time": data["time"],
+                        "enc": data["enc"]
+                    }
+                    app_info_response = self.session.get(get_app_info_url, params=get_app_info_params, verify=False)
+                    last_url = app_info_response.json()['url']
+                    last_response = self.session.get(last_url, verify=False)
+                    # 每个学校的deptIdEnc值是固定的，如果是为只为你的学校提供服务请直接将deptIdEnc保存！不需要再执行get_fidEnc()方法了
+                    last_location = last_response.history[2].headers['Location']
+                    print(last_location)
+                    self.deptIdEnc = \
+                    re.compile(r'fidEnc=(.*?)&').findall(last_location)[0]
+                    if self.version == 0:
+                        self.seatId = re.compile("seatId=(.*?)&").findall(last_location)[0]
+                        print(self.seatId)
         print(self.deptIdEnc)
 
     def get_seat_reservation_info(self):
