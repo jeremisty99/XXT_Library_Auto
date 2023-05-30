@@ -282,8 +282,9 @@ class Library:
         return result
 
     def submit(self, seatNum, day, starttime, endtime):
-        starttime = starttime.replace(':', '%3A')
-        endtime = endtime.replace(':', '%3A')
+
+        starttime_f = starttime.replace(':', '%3A')
+        endtime_f = endtime.replace(':', '%3A')
         if self.version == 0:
             # 旧版不需要pageToken
             response = self.session.get(url='https://office.chaoxing.com/front/apps/seatengine/select?'
@@ -294,16 +295,26 @@ class Library:
             token = re.compile("token = '(.*)'").findall(response.text)[0]
             # 滑动验证码
             captcha = check.check_captcha(self.session)
-            # print(captcha)
-
+            enc_data = {
+                'roomId': 3772,
+                'day': '2023-05-31',
+                'startTime': starttime,
+                'endTime': endtime,
+                'seatNum': '039',
+                'captcha': captcha,
+                'token': token
+            }
+            enc = check.enc(enc_data)
             response = self.session.get(url='https://office.chaoxing.com/data/apps/seatengine/submit?'
-                                            'roomId=3783&seatId=602&'  # 房间id roomId 上下需保持一致
-                                            f'startTime={starttime}&'  # 开始时间%3A代表: 自行替换9（小时）和后面00（分钟） 必须
-                                            f'endTime={endtime}&'  # 结束时间 规则同上
+                                            # 'roomId=3772&seatId=039&'  # 房间id roomId 上下需保持一致
+                                            'roomId=3772&'  # 房间id roomId 上下需保持一致
+                                            f'startTime={starttime_f}&'  # 开始时间%3A代表: 自行替换9（小时）和后面00（分钟） 必须
+                                            f'endTime={endtime_f}&'  # 结束时间 规则同上
                                             f'day={day}&'  # 预约时间 上下需保持一致
                                             f'seatNum={seatNum}&'  # 座位数字 与桌上贴纸一致
                                             f'token={token}&'
-                                            f'captcha={captcha}')
+                                            f'captcha={captcha}&'
+                                            f'enc={enc}')
             seat_result = response.json()
         else:
             response = self.session.get(url='https://office.chaoxing.com/front/apps/seat/list?'
@@ -317,8 +328,8 @@ class Library:
             token = re.compile("token: '(.*)'").findall(response.text)[0]
             response = self.session.get(url='https://office.chaoxing.com/data/apps/seat/submit?'
                                             'roomId=3783&seatId=602&'  # 房间id roomId 上下需保持一致
-                                            f'startTime={starttime}&'  # 开始时间%3A代表: 自行替换9（小时）和后面00（分钟） 必须
-                                            f'endTime={endtime}&'  # 结束时间 规则同上
+                                            f'startTime={starttime_f}&'  # 开始时间%3A代表: 自行替换9（小时）和后面00（分钟） 必须
+                                            f'endTime={endtime_f}&'  # 结束时间 规则同上
                                             f'day={day}&'  # 预约时间 上下需保持一致
                                             f'seatNum={seatNum}&'  # 座位数字 与桌上贴纸一致
                                             f'token={token}')
@@ -420,5 +431,6 @@ class Library:
 
 
 if __name__ == '__main__':
-    lib = Library("手机号", "密码", "版本:新版本为1/旧版本为0")
-    lib.submit(300, lib.today, '20:00', '21:00')  # 座位号 日期（今 明） 开始时间 结束时间
+    # lib = Library("手机号", "密码", "版本:新版本为1/旧版本为0")
+    lib = Library('18269120405', '20010727cx', 0)
+    lib.submit('039', lib.today, '22:30', '23:00')  # 座位号 日期（今 明） 开始时间 结束时间

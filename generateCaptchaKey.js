@@ -5,22 +5,16 @@ function generateCaptchaKey() {
       _0x54a552 = _0x54a552 - 0x1f4;
       var _0x37cb51 = _0x12455a[_0x54a552];
       return _0x37cb51;
-    }
-      ,
-      _0x54a5(_0x2d48a0, _0x36e8bc);
+    },_0x54a5(_0x2d48a0, _0x36e8bc);
   }
   function _0x1245() {
     var _0x85e12c = ['changedTouches', 'setItem', 'now', 'PATH', 'undefined', 'imageVerificationVo', 'left', 'removeClass', 'serverTime', 'offsetY', 'GET_SERVER_TIME', '\x22\x20class=\x22cx_icon-point\x20cx_point-', '20px', '#fff\x20url(', 'async', 'cx_icon_error', '请完成安全验证', 'mouseup', 'img', 'display', 'SLIDE_EVENT', '10OfTOqu', 'touchend', 'loaded', 'pop', 'touchstart', 'rotate(', '156WMRfga', 'SLIDE', 'css', 'onload', 'cx_max_error', 'staticServer', '38PMsnqW', 'amd', 'substring', '.cx_hkinnerWrap', 'config', '822552ohsQEy', 'cx_tips__answer_img', '#prompt', '.cx_max_error\x20.cx_refresh', 'addClass', 'offset', 'iconclick', '.cx_tips__answer', '.cx_max_error\x20.cx_fallback_tip', 'localTime', 'round', 'Too\x20many\x20failures,\x20try\x20again', 'stringify', 'length', 'show', '160px', '3969774wYVVyj', '.cx_imgBtn', 'document', 'remove', 'head', 'GET_CAPTCHA', 'element', '验证通过', 'returnValue', 'indexOf', 'captchaId', 'CAPTCHA_TYPE', 'TEXT_CLICK', 'cx_rightBtnAni', 'cx_success_refresh', 'mode-vcode-imgbox', 'originImage', 'WEB', 'offsetX', 'src', 'block', 'object', 'cx_success', '<div\x20class=\x22u-opacity\x22></div><div\x20class=\x22u-captcha\x20u-layer\x22\x20id=\x22eject\x22>', 'jsonp', 'isMobile', '.cx_modal_close', 'createElement', '.u-layer', 'token', 'extraData', 'attr', 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678', '.mode-vcode-img', 'EMBED', '.u-opacity', 'language', 'MOVE_EVENT', 'appendChild', 'mode-btn', 'none', 'CHECK_CAPTCHA', 'ajax', 'RUN_ENV', '.cx_slider_indicator', 'clientX', '.rotate-img', '</b>', 'Move\x20the\x20slider\x20to\x20fill\x20the\x20puzzle', 'sessionStorage', 'https', 'max_error', 'ROTATE', 'halfDv', 'context', '验证失败，请重试', 'HTML_STRING', '.cx_imgBg', 'preventDefault', 'cx_click_success', 'background', 'cx_click', '0123456789abcdef', 'START_EVENT', 'getElementsByTagName', 'getItem', '.mode-img-status', 'querySelector', 'version', 'coordinate', 'cutoutImage', 'location', 'CAPTCHA_MODE', 'charCodeAt', 'mousedown', 'USE_LANGUAGE', 'initCXCaptcha\x20requires\x20a\x20window\x20with\x20a\x20document', 'runEnv', 'BUTTON_IMAGE_WIDTH', '<img\x20src=\x22', 'verifyResult', '.cx_image_margin', 'margin-left', 'push', 'rotate', 'slide', '\x22\x20class=\x22mode-vcode-img\x22><img\x20class=\x22mode-reference-img\x22\x20src=\x22', 'floor', 'cancelBubble', 'mode', 'cx_tips__answer_div', 'getTime', '0px', 'status-success', '\x22><div\x20class=\x22mode-img-status\x22></div>', 'find', '35OAodey', 'hidden', 'captcha.chaoxing.com', 'callback', 'function', '2089972UgvhOe', 'touchmove', 'px;\x22></div>', 'width', '8327726xqJPVT', 'click', 'embed', 'onVerify', 'px;\x20top:\x20', 'type', 'status-error', 'text/javascript', 'hide', 'fromCharCode', 'exports', 'mousemove', 'get', 'LIGHT', 'Failed\x20to\x20load\x20', 'tokenId', 'html', 'ICON_CLICK', 'removeEventListener', 'TouchEvent', '14369WJIOFA', '\x20\x20<div\x20class=\x22cx_comImageValidate\x22\x20>\x0a\x09\x09\x09<div\x20class=\x22cx_modal_title\x22><span\x20id=\x22prompt\x22>请完成安全验证</span>\x20<span\x20class=\x22cx_modal_close\x22><span\x20class=\x22cx_icon-close\x22></span></span></div>\x0a\x09\x09\x09<div\x20class=\x22cx_image_margin\x22\x20>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22cx_imgBg\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22cx_imgBtn\x22\x20>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20alt=\x22\x22\x20src=\x22\x22\x20draggable=\x22false\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x09\x09\x09\x09<span\x20class=\x22cx_refresh\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22rotate-img\x22></div>\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22cx_hkinnerWrap\x20\x22>\x0a\x09\x09\x20\x09\x20<div\x20class=\x22cx_slider_indicator\x22></div>\x0a\x09\x09\x09\x20<div\x20class=\x22cx_rightBtn\x22\x20><span\x20class=\x22notSel\x22></span></div>\x0a\x09\x09\x09\x20<div\x20class=\x22cx_slider_tip\x22\x20>\x0a\x09\x09\x09\x20\x09<span\x20class=\x22cx_tip_icon\x22></span>\x0a\x09\x09\x09\x20\x09<span\x20class=\x22cx_tip_text\x20cx_fallback_tip\x22></span>\x0a\x09\x09\x09\x20\x09<div\x20class=\x22cx_tip_answer\x20hide\x22>\x0a\x09\x09\x09\x20\x09\x09<span\x20class=\x22cx_tip_point\x22></span>\x0a\x09\x09\x09\x20\x09\x09<img\x20class=\x22cx_tip_img\x22>\x0a\x09\x09\x09\x20\x09</div>\x0a\x09\x09\x09\x20</div>\x0a\x09\x09\x09\x20<div\x20class=\x22cx_click-tip\x22>\x0a\x09\x09\x09\x09\x20<span\x20class=\x22cx_tip_icon\x22></span>\x0a\x09\x09\x09\x09\x20<span\x20class=\x22cx_tip_text\x20cx_fallback_tip\x22>验证成功</span>\x0a\x09\x09\x09\x09\x20<div\x20class=\x22cx_tips__answer\x22></div>\x09\x09\x09\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20</div>\x0a', '.cx_slider_tip', 'deg)', 'DISTANCE', 'TEMPLATE_IMAGE_WIDTH', 'concat', 'init_slider', '://', 'cx_error', 'script', '3cEoMqP', 'mode-btn-slider', '.cx_icon-point', 'charAt', '拖动滑块,使图片角度为正', 'END_EVENT', 'POPUP', 'readyState', 'replace', '64266BpyNzi', 'textclick', 'cx_moving', 'CXCaptcha_theme_light', 'complete', 'url(\x22', 'initCXCaptcha', '请依次点击\x20', '.cx_tip_text', 'off', 'stopPropagation', 'protocol', 'captcha/get/verification/image', 'href', 'onerror', 'onreadystatechange', '传入的\x20element\x20不正确', '370RDpnhg', 'addEventListener', 'captcha/get/conf', '1.1.13', '失败过多，点此重试', '.cx_rightBtn', 'clickArr', '1132313AptnAr'];
     _0x1245 = function () {
       return _0x85e12c;
-    }
-      ;
-    return _0x1245();
+    };return _0x1245();
   }
-
   (function (_0x4c4281, _0x18cf83) {
-    var _0x4a0f90 = _0x54a5
-      , _0x2e8162 = _0x4c4281();
+    var _0x4a0f90 = _0x54a5, _0x2e8162 = _0x4c4281();
     while (!![]) {
       try {
         var _0xae2ae0 = parseInt(_0x4a0f90(0x22e)) / 0x1 * (-parseInt(_0x4a0f90(0x27c)) / 0x2) + -parseInt(_0x4a0f90(0x239)) / 0x3 * (parseInt(_0x4a0f90(0x216)) / 0x4) + -parseInt(_0x4a0f90(0x253)) / 0x5 * (-parseInt(_0x4a0f90(0x242)) / 0x6) + -parseInt(_0x4a0f90(0x211)) / 0x7 * (-parseInt(_0x4a0f90(0x281)) / 0x8) + -parseInt(_0x4a0f90(0x291)) / 0x9 * (parseInt(_0x4a0f90(0x270)) / 0xa) + -parseInt(_0x4a0f90(0x21a)) / 0xb + -parseInt(_0x4a0f90(0x276)) / 0xc * (-parseInt(_0x4a0f90(0x25a)) / 0xd);
@@ -33,12 +27,8 @@ function generateCaptchaKey() {
       }
     }
   }(_0x1245, 0x6cbb6))
-
-
   var _0x1978c8 = _0x54a5;
   var _0x27b5c0 = _0x1978c8;
-
-
   function _0x11e799(_0x1eb165, _0x5af8b8) {
     var _0x3ae5be = (0xffff & _0x1eb165) + (0xffff & _0x5af8b8);
     return (_0x1eb165 >> 0x10) + (_0x5af8b8 >> 0x10) + (_0x3ae5be >> 0x10) << 0x10 | 0xffff & _0x3ae5be;
@@ -59,8 +49,7 @@ function generateCaptchaKey() {
     return _0x4f44bd(_0x48cdae ^ (_0x4e60da | ~_0x5066f5), _0x3af086, _0x4e60da, _0xa2dd3e, _0x3bb21f, _0x53fadd);
   }
   function _0x1313f4(_0x3140ef, _0x5e406e) {
-    var _0x2ed730 = _0x27b5c0;
-    _0x3140ef[_0x5e406e >> 0x5] |= 0x80 << _0x5e406e % 0x20,
+    var _0x2ed730 = _0x27b5c0;    _0x3140ef[_0x5e406e >> 0x5] |= 0x80 << _0x5e406e % 0x20,
       _0x3140ef[0xe + (_0x5e406e + 0x40 >>> 0x9 << 0x4)] = _0x5e406e;
     for (var _0x5574fb, _0x1ce687, _0x396f4f, _0x2e351f, _0x413eac = 0x67452301, _0x5bb584 = -0x10325477, _0x47418a = -0x67452302, _0x120748 = 0x10325476, _0x2e1dfe = 0x0; _0x2e1dfe < _0x3140ef[_0x2ed730(0x28e)]; _0x2e1dfe += 0x10)
       _0x413eac = _0x27c1f0(_0x5574fb = _0x413eac, _0x1ce687 = _0x5bb584, _0x396f4f = _0x47418a, _0x2e351f = _0x120748, _0x3140ef[_0x2e1dfe], 0x7, -0x28955b88),
@@ -137,8 +126,7 @@ function generateCaptchaKey() {
     return _0x596fe8;
   }
   function _0x1ed201(_0x570a88) {
-    var _0x5b9c55 = _0x27b5c0
-      , _0x389e02 = [];
+    var _0x5b9c55 = _0x27b5c0      , _0x389e02 = [];
     for (_0x389e02[(_0x570a88['length'] >> 0x2) - 0x1] = void 0x0,
       _0x1193a4 = 0x0; _0x1193a4 < _0x389e02[_0x5b9c55(0x28e)]; _0x1193a4 += 0x1)
       _0x389e02[_0x1193a4] = 0x0;
@@ -171,9 +159,7 @@ function generateCaptchaKey() {
     return _0x21f71e = _0x1313f4(_0x5b272d['concat'](_0x1ed201(_0x3e3383)), 0x200 + 0x8 * _0x3e3383[_0x346b29(0x28e)]),
       _0x4c0e23(_0x1313f4(_0x279fae[_0x346b29(0x234)](_0x21f71e), 0x280));
   }
-
   function _0x14e7da(_0x33a038, _0x174a6f, _0x133d48) {
-
     return _0x174a6f ? _0x133d48 ? _0x20a814(_0x174a6f, _0x33a038) : _0x33f160(_0x20a814(_0x174a6f, _0x33a038)) : _0x133d48 ? _0x1a06c0(_0x33a038) : _0x33f160(_0x1a06c0(_0x33a038));
   }
 
@@ -197,7 +183,7 @@ function generateCaptchaKey() {
   var randomStr = randomString() + token;
   var captchaKey = _0x14e7da(randomStr);
   token = _0x14e7da(token + captchaId + type + captchaKey) + ':' + (parseInt(token) + 0x493e0);
-  // console.log({ captchaKey, token })
   return { captchaKey, token }
 }
 
+console.log(generateCaptchaKey())

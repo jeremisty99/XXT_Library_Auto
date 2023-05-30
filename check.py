@@ -55,9 +55,20 @@ def check_captcha(session):
         })
 
     check_result = json.loads(re.search(r'\{.*\}', res_check.text)[0])
-    print(check_result['result'])
     if check_result['result']:
         return json.loads(check_result['extraData'])['validate']
     else:
         print('error')
         return res_check.text
+
+
+def enc(data):
+    with open('./enc.js', encoding='utf-8') as f:
+        js = f.read()
+
+        # 通过compile命令转成一个js对象
+    docjs = execjs.compile(js)
+
+    # 调用function
+    res = docjs.call('getMd5Hash', data)
+    return res
